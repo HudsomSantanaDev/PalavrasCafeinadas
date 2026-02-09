@@ -1,0 +1,670 @@
+/* =============================
+   RESET E BASE
+============================= */
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+    font-family: "Playwrite NZ Basic", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+:root {
+    --laranja: #E87F2B;
+    --verde-claro: #BBE48E;
+    --preto: black;
+    --branco: white;
+    --marrom-escuro: #6C3A0B;
+    --verde-vibrante: #28b911;
+    --off-white: #FAF6F2;
+}
+
+@media (max-width: 768px) {
+    
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+   
+}
+
+/* =============================
+   HEADER
+============================= */
+.header {
+  
+    border-bottom: 5px solid var(--verde-claro);
+    background-color: var(--verde-vibrante);
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+
+   
+    padding:  1rem;
+
+}
+
+.header section #logo {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 30%;
+}
+
+.navbar a {
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: var(--off-white);
+}
+
+
+
+/* =============================
+   BOTÕES E ICONES
+============================= */
+.icons img {
+    margin: 1rem;
+    cursor: pointer;
+    font-size: small;
+}
+
+.icons img:hover {
+    width: 40px;
+    height: 40px;
+}
+
+.btn {
+    background-color: var(--laranja);
+    color: var(--off-white);
+    padding: 0.5rem 1.3rem;
+    font-size: 1rem;
+    cursor: pointer;
+   
+  
+}
+
+
+
+/* =============================
+   HOME / BANNER
+============================= */
+.home-conteiner {
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+justify-content: center;
+   
+    height: 100vh;
+    
+    animation-name: backgroundHome;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes backgroundHome {
+    0%{ background-color: #6edb5d; }
+    20%{ background-color: #69df56; }
+    40%{ background-color: #75df65; }
+    60%{ background-color: #70df5e; }
+    80%{ background-color: #46b934; }
+    100%{ background-color: #6fd160; }
+}
+
+.home-conteiner section.home {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* mobile-first */
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.home-content h3 {
+    color: var(--off-white);
+    font-size: 3rem; /* mobile */
+    border-bottom: 3px solid var(--verde-claro);
+}
+
+.home-content p {
+    color: var(--off-white);
+    font-size: 1.4rem; /* mobile */
+    font-weight: 100;
+    line-height: 1.6rem;
+    padding: 1rem 0;
+    text-transform: none;
+}
+
+/* =============================
+   ABOUT / SOBRE NÓS
+============================= */
+.title {
+    font-size: 1.8rem; /* mobile */
+    color: var(--marrom-escuro);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--verde-claro);
+}
+
+.title span {
+    color: var(--verde-vibrante);
+}
+
+.about-conteiner .row {
+    display: flex;
+    flex-direction: column; /* mobile */
+    align-items: center;
+  
+    gap: 1.5rem;
+}
+
+.about-conteiner .row .content {
+    padding: 1rem;
+    background-color: var(--verde-vibrante);
+}
+
+.about-conteiner .row .content h3 {
+    font-size: 2rem; /* mobile */
+    color: var(--off-white);
+    border-bottom: 3px solid var(--verde-claro);
+}
+
+.about-conteiner .row .content p {
+    font-size: 1.4rem;
+    color: var(--off-white);
+    line-height: 1.8rem;
+    text-transform: none;
+    margin-bottom: 1rem;
+}
+
+/* =============================
+   MENU
+============================= */
+.menu-conteiner .box-conteiner {
+    display: grid;
+    grid-template-columns: 1fr; /* mobile-first */
+    gap: 1rem;
+}
+
+.menu-conteiner .box-conteiner .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.5rem solid var(--verde-vibrante);
+    padding: 3rem; /* mobile */
+    cursor: pointer;
+    height: 18rem;
+    background-color: #A8D97A;
+    border-radius: 7px;
+    transition: 0.2s ease-in;
+}
+
+.menu-conteiner .box-conteiner .box #itemImg {
+    transition: 1s;
+    color: var(--off-white);
+    opacity: 80%;
+    height: 14rem;
+}
+
+.menu-conteiner .box-conteiner .box:hover {
+    background-color: var(--verde-claro);
+}
+
+.menu-conteiner .box-conteiner .box:hover #itemImg {
+    transform: scale(1.5);
+    opacity: 100%;
+}
+
+.menu-conteiner .box-conteiner .box h3 {
+    color: var(--off-white);
+    font-size: 1.3rem;
+    padding: 0.5rem 0;
+    transition: 1.5s;
+}
+
+.menu-conteiner .box-conteiner .box:hover > * {
+    color: var(--laranja);
+}
+
+/* =============================
+   FOOTER
+============================= */
+.footer {
+    text-align: center;
+}
+
+.footer .share {
+    padding: 1rem 0;
+}
+
+.footer .share img {
+    margin: 0.3rem;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.footer .share .redes {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .rodape {
+    display: flex;
+    position: sticky;
+    bottom: 0;
+    background-color: var(--verde-vibrante);
+    height: 3rem;
+    color: var(--marrom-escuro);
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.09rem;
+}
+}
+
+/* =============================
+   MEDIA QUERIES TABLET
+============================= */
+@media (min-width: 768px) {
+    .home-content h3 { font-size: 5rem; }
+    .home-content p { font-size: 1.8rem; }
+    .about-conteiner .row { flex-direction: row; }
+    .menu-conteiner .box-conteiner { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+/*
+
+gpt-  colega de estudo
+figma - nao usou
+fotoshop-se calhar
+docker-pedem muito
+nodejs-depois
+investir no github e 
+git(principalmente)
+restfull api(necessario),postman(simuacao de pedidos api)
+noSql(da uma olhada depois,importante)
+
+*/
+
+
+
+/*monitores*/
+@media (min-width: 1024px){
+    * {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    /*sem linha nos input*/
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    /*todos os texto com inicio letra maiuscula*/
+    transition: 0.2s linear;
+    /*efeito de lento demora para executar o efeito*/
+
+    /*fonts*/
+      font-family: "Playwrite NZ Basic", cursive;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+:root {
+    /*cores do cafe*/
+    --laranja: #E87F2B;
+    --verde-claro: #BBE48E;
+    --preto: black;
+    --branco: white;
+    --marrom-escuro: #6C3A0B;
+    --verde-vibrante: #28b911;
+      --off-white: #FAF6F2;
+
+}
+section {
+
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+  /*  background-color: #BBE48E;*/
+
+
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    
+    border-bottom:5px solid  var(--verde-claro);
+    background-color: var(--verde-vibrante);
+
+}
+.header section {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.header section #logo{
+    height:4rem;
+    width: 4rem;
+    border-radius: 30%;
+}
+.navbar a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: var(--branco);
+}
+.navbar a:hover {
+    color: var(--verde-claro);
+    border-bottom: 0.1rem solid var(--laranja);
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+
+}
+
+.icons img {
+    margin: 1rem;
+    cursor: pointer;
+    font-size: small;
+
+}
+
+.icons img:hover {
+    width: 40px;
+    height: 40px;
+}
+
+.btn {
+    background-color: var(--laranja);
+    color: white;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+    /*cada item em uma linha(children)*/
+
+
+}
+
+.btn:hover {
+    letter-spacing: 0.05rem;
+    /*espaçamento entre as letras*/
+}
+
+.home-conteiner {
+    background: url("img/cafe1_files/home-img.jpg");
+    /*imagem de fundo*/
+    background-size: cover;
+    background-position: center;
+
+
+    height: 100vh;
+
+    animation-name:backgroundHome ;
+    animation-timing-function: ease-in-out;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes backgroundHome {
+    0%{
+background-color: #6edb5d;
+    }
+    20%{
+background-color: #69df56;
+    }
+    40%{
+background-color: #75df65;
+    }
+    60%{
+        background-color: #70df5e;
+    }
+    80%{
+background-color: #46b934;
+    }
+    100%{
+background-color: #6fd160;
+
+    }
+}
+
+.home-conteiner section.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.home-content {
+    max-width: 60rem;
+
+}
+
+.home-content h3 {
+    color: var(--off-white);
+    font-size: 6rem;
+    border-bottom: 3px solid var(--verde-claro);
+}
+
+.home-content p {
+    color: var(--off-white);
+    font-size: 2rem;
+    font-weight: 100;
+    /*peso da letra*/
+    line-height: 2rem;
+    /*altura da linha*/
+    padding: 1rem 0;
+   text-transform: none;
+  
+
+
+
+}
+
+/*ABOUT*/
+.title {
+    font-size: 4rem;
+    color: var(--marrom-escuro);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+     border-bottom: 3px solid var(--verde-claro);
+
+}
+
+.title span {
+    color: var(--verde-vibrante);
+    text-transform: uppercase;/*tudo maiusculo*/
+
+}
+
+.about-conteiner .row {
+    display: flex;
+    align-items: center;
+    background-color: var(--off-white);
+    gap: 1.5rem;
+    
+}
+
+.about-conteiner .row .content {
+    padding: 2rem;
+    background-color: var(--verde-vibrante);
+}
+
+.about-conteiner .row .content h3 {
+    font-size: 3rem;
+    color: var(--off-white);
+     border-bottom: 3px solid var(--verde-claro);
+
+}
+
+.about-conteiner .row .content p {
+    font-size: 1.6rem;
+    color: var(--off-white);
+    padding-left: 1rem 0;
+    line-height: 1.8;
+     text-transform: none;
+
+}
+
+/*Menu*/
+.menu-conteiner .box-conteiner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.menu-conteiner .box-conteiner .box {
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    border:  0.5rem solid var(--verde-vibrante);
+    padding: 5rem;
+    cursor: pointer;
+    height: 20rem;
+    background-color: #A8D97A;
+    border-radius: 7px; 
+    transition:  0.2s ease-in;
+    
+
+}
+.menu-conteiner .box-conteiner .box #itemImg {
+    transition: 1s;
+    color: var(--off-white);
+    opacity: 80%;
+  
+
+height: 17rem;
+
+
+}
+
+.menu-conteiner .box-conteiner .box:hover {
+    background-color: var(--verde-claro);
+   
+   
+}
+.menu-conteiner .box-conteiner .box:hover #itemImg{
+    transform: scale(1.7);
+    opacity: 100%;
+}
+
+
+.menu-conteiner .box-conteiner .box h3 {
+    color: var(--off-white);
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+    transition: 1.5s;
+    
+
+
+
+
+}
+
+
+
+
+.menu-conteiner .box-conteiner .box .whatsapp {
+    height: 30px;
+    width: 30px;
+}
+
+/* atenção ao estilo cascata, o ultimo prevalece*/
+.menu-conteiner .box-conteiner .box:hover>* {
+    /*selecionei todos os chindren do box quando hover*/
+ 
+    color: var(--laranja);
+}
+
+/*address*/
+.address {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.address .conteiner {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--verde-claro);
+    justify-content: center;
+    align-items: center;
+}
+
+.address .conteiner .map iframe {
+    padding-bottom: 25px;
+}
+
+/*footer*/
+.footer {
+    text-align: center;
+}
+
+.footer .share {
+    padding: 1rem 0;
+}
+
+.footer .share img {
+    margin: 0.3rem;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 1rem;
+
+}
+
+.footer .share img:hover {
+    background-color: var(--verde-claro);
+}
+
+.footer .share .redes {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.footer .share .redes a img {
+    height: 26px;
+    width: 26px;
+
+}
+
+.footer .rodape {
+    display: flex;
+    position: sticky;
+    bottom: 0;
+    background-color: var(--verde-vibrante);
+    height: 3rem;
+    color: var(--marrom-escuro);
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.09rem;
+
+
+
+}
+}
