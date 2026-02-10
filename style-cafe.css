@@ -25,7 +25,7 @@
     --off-white: #FAF6F2;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     
 
 section {
@@ -450,7 +450,7 @@ noSql(da uma olhada depois,importante)
 
 
 /*monitores*/
-@media (min-width: 768px){
+@media (min-width: 769px){
     * {
     margin: 0;
     padding: 0;
