@@ -178,7 +178,7 @@ opacity: 100%;
 
 
 }
-}
+
 
 
 
@@ -425,27 +425,13 @@ justify-content: center;
     font-weight: 800;
     letter-spacing: 0.09rem;
 }
-
-/* =============================
-   MEDIA QUERIES TABLET
-============================= */
+}
 
 
 
 
-/*
 
-gpt-  colega de estudo
-figma - nao usou
-fotoshop-se calhar
-docker-pedem muito
-nodejs-depois
-investir no github e 
-git(principalmente)
-restfull api(necessario),postman(simuacao de pedidos api)
-noSql(da uma olhada depois,importante)
 
-*/
 
 
 
@@ -673,10 +659,17 @@ background-color: #6fd160;
 }
 
 /*Menu*/
+.menu-conteiner{
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    
+}
 .menu-conteiner .box-conteiner {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+   
 }
 
 .menu-conteiner .box-conteiner .box {
@@ -694,13 +687,13 @@ background-color: #6fd160;
     
 
 }
-.menu-conteiner .box-conteiner .box #itemImg {
+.menu-conteiner .box-conteiner .box .itemImg {
     transition: 1s;
     color: var(--off-white);
     opacity: 80%;
   
 
-height: 17rem;
+height: 20rem;
 
 
 }
@@ -710,7 +703,7 @@ height: 17rem;
    
    
 }
-.menu-conteiner .box-conteiner .box:hover #itemImg{
+.menu-conteiner .box-conteiner .box:hover .itemImg{
     transform: scale(1.7);
     opacity: 100%;
 }
@@ -731,16 +724,14 @@ height: 17rem;
 
 
 
-.menu-conteiner .box-conteiner .box .whatsapp {
-    height: 30px;
-    width: 30px;
-}
+
 
 /* atenção ao estilo cascata, o ultimo prevalece*/
 .menu-conteiner .box-conteiner .box:hover>* {
     /*selecionei todos os chindren do box quando hover*/
  
     color: var(--laranja);
+    
 }
 
 /*address*/
