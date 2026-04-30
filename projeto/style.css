@@ -1,0 +1,300 @@
+
+:root {
+  --primary:#3e2723;
+  --secondary:#6C3A0B;
+  --accent:#E87F2B;;
+  --light:#f9f6f4;
+  
+   --laranja: #E87F2B;
+    --verde-claro: #BBE48E;
+    --preto: black;
+    --branco: white;
+    
+    --verde-vibrante: #28b911;
+    --off-white: #FAF6F2;
+  
+}
+
+html{scroll-behavior:smooth;}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:var(--light);
+  color:#333;
+}
+
+/* LOADER (SPLASH SCREEN) */
+#loader{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:var(--primary);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+  transition:opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loader-logo{
+  width:140px;
+  animation:zoomIn 1s ease;
+}
+
+@keyframes zoomIn{
+  from{transform:scale(0.6);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:rgba(62,39,35,0.95);
+  z-index:1000;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  color:white;
+}
+
+.nav-links{
+  position:absolute;
+  top:60px;
+  right:0;
+  background:var(--primary);
+  flex-direction:column;
+  width:200px;
+  padding:20px;
+  border-radius:0 0 0 10px;
+
+  transform:translateX(100%);
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s;
+}
+
+.nav-links.active{
+  transform:translateX(0);
+  opacity:1;
+  pointer-events:auto;
+}
+
+.nav-links a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* MOBILE MENU */
+@media(max-width:768px){
+  .nav-links{
+    position:absolute;
+    top:60px;
+    right:0;
+    background:var(--primary);
+    flex-direction:column;
+    width:200px;
+    display:none;
+    padding:20px;
+    border-radius:0 0 0 10px;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  height:100vh;
+  width: 100%;
+  
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+}
+
+/* SLIDES */
+.hero-slider{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:0;
+}
+
+
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+
+.slide.active{
+  opacity:1;
+}
+
+/* ESCURECER FUNDO */
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  top:0;
+  left:0;
+  z-index:1;
+}
+
+
+
+/* TEXTO POR CIMA */
+.hero-content{
+  position:relative;
+  z-index:2;
+  background:rgba(0,0,0,0.4);
+  padding:40px;
+  border-radius:20px;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  background:var(--secondary);
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+
+/* SECTION */
+.container{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* MENU */
+.menu{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+  opacity:0;
+  transform:translateY(30px);
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* INSTAGRAM */
+.instagram{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:10px;
+}
+
+.instagram img{
+  width:100%;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.instagram img:hover{
+  transform:scale(1.05);
+}
+
+/* FOOTER */
+footer{
+  background:var(--primary);
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+/* WHATSAPP */
+.whatsapp-container{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.whatsapp-text{
+  background:white;
+  padding:8px 12px;
+  border-radius:20px;
+}
+
+.whatsapp-btn{
+  background:#25D366;
+  color:white;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:24px;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:600px){
+  .hero h1{font-size:30px}
+}

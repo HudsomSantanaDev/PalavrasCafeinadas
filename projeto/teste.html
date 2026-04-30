@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palavras Cafeinadas</title>
+
+<link rel="icon" href="img/icons/imagen/logo.jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<!-- LOADER (quando inicia)-->
+<div id="loader">
+  <img src="img/icons/imagen/logo.jpeg" class="loader-logo" alt="Logo">
+</div>
+
+<header>
+  <div class="nav">
+    <div><img src="img/icons/imagen/logo.jpeg" width="40px" height="40px" alt=""></div><h2>Palavras Cafeinadas </h2>
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+  ☰
+</button>
+
+    <div class="nav-links" id="menu">
+      <a href="#home">Início</a>
+      <a href="#menu-section">Cardápio</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#contact">Contato</a>
+    </div>
+  </div>
+</header>
+<section class="hero" id="home">
+
+  
+  <div class="hero-slider">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" class="slide active">
+    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" class="slide">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" class="slide">
+    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb" class="slide">
+  </div>
+
+  <div class="hero-content">
+    <h1>Café perfeito todos os dias</h1>
+    <p>No Palavras Cafeinadas, cada café é uma conversa e cada snack uma pausa inspiradora, entre o aroma do expresso e os sabores caseiros.</p>
+    <a href="#menu-section" class="btn">Ver Cardápio</a>
+  </div>
+
+</section>
+
+<section class="container" id="menu-section">
+  <h2>Cardápio</h2>
+  <div class="menu">
+    <div class="card">Espresso €2</div>
+    <div class="card">Cappuccino €3</div>
+    <div class="card">Latte €3.5</div>
+    <div class="card">Bolo €4</div>
+  </div>
+</section>
+
+<section class="container" id="instagram">
+  <h2>Instagram</h2>
+  <div class="instagram">
+    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+  </div>
+</section>
+
+<section class="container" id="contact">
+  <h2>Contato</h2>
+  <p>📞 +351 962 967 652</p>
+</section>
+
+<!--/*ADDRESS*/-->
+ <section class=" container" id="address">
+        <div class="conteiner">
+            <h2 class="title">Encontre-nos <span>aqui</span></h2>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001.5138601437598!2d-8.551102300000029!3d41.2105711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2461003e7308ab%3A0xd9e07baeb5cde9f0!2sPalavras%20Cafeinadas!5e0!3m2!1spt-PT!2spt!4v1767871290608!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+             <p>Tem dúvidas ou quer reservar? Entre em contacto connosco!</p>
+    <a href="mailto:contato@cafebrunch.com" class="btn">Enviar Mensagem</a>
+    <br>
+        </div>
+    </section>
+
+<footer>
+  <p>© 2026 Palavras Cafeinadas</p>
+</footer>
+
+<!-- WHATSAPP -->
+<div class="whatsapp-container">
+  <div class="whatsapp-text">Fale Connosco</div>
+  <a href="https://wa.me/351912345678?text=Olá,%20quero%20mais%20informações!" class="whatsapp-btn">
+    💬
+  </a>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
