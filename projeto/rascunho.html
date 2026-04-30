@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+
+
+
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+    }
+
+    div {
+        margin: 10px;
+        background-color: #6d4c41;
+    }
+
+    .titulo {
+        font-size: 32px;
+        font-weight: 700;
+        color: white;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeDown 1s ease forwards;
+    }
+
+    @keyframes fadeDown {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+   /* .typing {
+        font-size: 32px;
+        font-weight: 700;
+        color: white;
+        border-right: 3px solid white;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 0;
+        animation: typing 3s steps(20, end) forwards, blink 0.7s infinite;
+        border-right: 2px solid rgba(255,255,255,0.5);
+    }
+
+
+    @keyframes typing {
+        to {
+            width: 100%;
+        }
+    }
+        */
+        .typing{
+  font-size:32px;
+  font-weight:700;
+  color:white;
+  border-right:3px solid white;
+  white-space:nowrap;
+  overflow:hidden;
+  display:inline-block;
+  padding-right:5px;
+  animation:blink 0.7s infinite;
+}
+
+@keyframes blink{
+  50%{ border-color:transparent; }
+}
+
+
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+
+    .logo span {
+        opacity: 0;
+        display: inline-block;
+        transform: translateY(20px);
+        animation: letter 0.5s forwards;
+    }
+
+    .logo span:nth-child(1) {
+        animation-delay: 0.05s;
+    }
+
+    .logo span:nth-child(2) {
+        animation-delay: 0.1s;
+    }
+
+    .logo span:nth-child(3) {
+        animation-delay: 0.15s;
+    }
+
+    .logo span:nth-child(4) {
+        animation-delay: 0.2s;
+    }
+
+    .logo span:nth-child(5) {
+        animation-delay: 0.25s;
+    }
+
+    .logo span:nth-child(6) {
+        animation-delay: 0.3s;
+    }
+
+    .logo span:nth-child(7) {
+        animation-delay: 0.35s;
+    }
+
+    .logo span:nth-child(8) {
+        animation-delay: 0.4s;
+    }
+
+    .logo span:nth-child(9) {
+        animation-delay: 0.45s;
+    }
+
+    .logo span:nth-child(10) {
+        animation-delay: 0.5s;
+    }
+
+    .logo span:nth-child(11) {
+        animation-delay: 0.55s;
+    }
+
+    .logo span:nth-child(12) {
+        animation-delay: 0.6s;
+    }
+
+    .logo span:nth-child(13) {
+        animation-delay: 0.65s;
+    }
+
+    .logo span:nth-child(14) {
+        animation-delay: 0.7s;
+    }
+
+    .logo span:nth-child(15) {
+        animation-delay: 0.75s;
+    }
+
+    .logo span:nth-child(16) {
+        animation-delay: 0.8s;
+    }
+
+    .logo span:nth-child(17) {
+        animation-delay: 0.85s;
+    }
+
+    .logo span:nth-child(18) {
+        animation-delay: 0.9s;
+    }
+
+    @keyframes letter {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    .glow {
+        font-size: 32px;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0 0 5px #fff, 0 0 10px #d7ccc8, 0 0 20px #6d4c41;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            text-shadow: 0 0 5px #fff, 0 0 10px #d7ccc8;
+        }
+
+        50% {
+            text-shadow: 0 0 15px #fff, 0 0 30px #6d4c41;
+        }
+    }
+</style>
+
+<body>
+    <div>
+        <h2 class="titulo">Palavras Cafeinadas(fade) ☕</h2>
+    </div>
+    <div>
+        <h2 class="typing" id="typing">Palavras Cafeinadas ☕</h2>
+    </div>
+    <div>
+        <h2 class="logo">
+            <span>P</span><span>a</span><span>l</span><span>a</span><span>v</span><span>r</span><span>a</span><span>s</span>
+            <span> </span>
+            <span>C</span><span>a</span><span>f</span><span>e</span><span>i</span><span>n</span><span>a</span><span>d</span><span>a</span><span>s</span>
+        </h2>
+    </div>
+
+
+
+    <div>
+        <h2 class="glow">
+  Palavras <span>Cafeinadas ☕</span>
+</h2>
+    </div>
+    
+
+
+<h2 class="hero-title">
+  <span id="typing"></span>
+  <span class="cursor"></span>
+</h2>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const text = "Palavras Cafeinadas ";
+const el = document.getElementById("typing");
+
+let index = 0;
+let isDeleting = false;
+
+function typeEffect(){
+
+  if(!isDeleting){
+    el.textContent = text.substring(0, index++);
+    
+    if(index > text.length){
+      isDeleting = true;
+      setTimeout(typeEffect, 1500); // pausa antes de apagar
+      return;
+    }
+  } else {
+    el.textContent = text.substring(0, index--);
+
+    if(index === 0){
+      isDeleting = false;
+    }
+  }
+
+  setTimeout(typeEffect, isDeleting ? 50 : 100);
+}
+
+typeEffect();
+    </script>
+
+
+
+
+F
+</body>
+
+</html>

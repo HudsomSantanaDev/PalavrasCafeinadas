@@ -3,6 +3,12 @@ function toggleMenu(){
   document.getElementById("menu").classList.toggle("active");
 }
 
+
+//sumindo com borda direita do tirulo centra do
+setTimeout(() => {
+  document.querySelector('.typing').classList.add('finished');
+}, 4000);
+
 /* LOADER */
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
@@ -71,5 +77,19 @@ document.addEventListener('click', (e) => {
 
 //toogle menu
 function toggleMenu(){
-  document.getElementById("menu").classList.toggle("active");
+  const menu = document.getElementById("menu");
+  const toggle = document.querySelector(".menu-toggle");
+
+  menu.classList.toggle("active");
+  toggle.classList.toggle("active");
 }
+
+//iniciar
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 2200);
+});

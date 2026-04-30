@@ -7,6 +7,11 @@
 
 <link rel="icon" href="img/icons/imagen/logo.jpeg">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
 <link rel="stylesheet" href="style.css">
 
 
@@ -16,23 +21,33 @@
 
 <!-- LOADER (quando inicia)-->
 <div id="loader">
-  <img src="img/icons/imagen/logo.jpeg" class="loader-logo" alt="Logo">
+  <div class="steam">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <img src="img/icons/imagen/logo.jpeg" class="loader-logo" alt="Palavras Cafeinadas">
 </div>
 
 <header>
   <div class="nav">
-    <div><img src="img/icons/imagen/logo.jpeg" width="40px" height="40px" alt=""></div><h2>Palavras Cafeinadas </h2>
+    <div><img id="logo-nav" src="img/icons/imagen/logo.jpeg"   alt=""></div>
+    <div><h2  class="typing fonte1">Palavras Cafeinadas </h2>
+    </div>
 
     <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
-  ☰
+  <span></span>
+  <span></span>
+  <span></span>
 </button>
 
-    <div class="nav-links" id="menu">
-      <a href="#home">Início</a>
-      <a href="#menu-section">Cardápio</a>
-      <a href="#instagram">Instagram</a>
-      <a href="#contact">Contato</a>
-    </div>
+<div class="nav-links" id="menu">
+  <a href="#home">Início</a>
+  <a href="#menu-section">Cardápio</a>
+  <a href="#instagram">Instagram</a>
+  <a href="#contact">Contato</a>
+</div>
   </div>
 </header>
 <section class="hero" id="home">
@@ -91,7 +106,7 @@
     </section>
 
 <footer>
-  <p>© 2026 Palavras Cafeinadas</p>
+  <p>© 2026 <span class="fonte2">Palavras Cafeinadas</span></p>
 </footer>
 
 <!-- WHATSAPP -->
