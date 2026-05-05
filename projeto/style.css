@@ -137,7 +137,8 @@ header{
 }
 #logo-nav{
   border-radius: 50%;
-  width: 10vw;
+  max-width: 10vw;
+  max-height: 10vh;
 }
 
 /*Titulo*/
@@ -361,7 +362,7 @@ header{
   transform:scale(1.05);
 }
 
-
+/*feito*/
 /* SECTION */
 .container{
   padding:80px 20px;
@@ -370,26 +371,105 @@ header{
 }
 
 /* MENU */
-.menu{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+.menu-hover{
+  height:60vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f9f6f4;
 }
 
-.card{
-  background:white;
-  padding:20px;
-  border-radius:15px;
-  text-align:center;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-  transition:0.3s;
+.product-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  width:300px;
+}
+/*itens com efeito hover de fundo*/
+.product-list li{
+  position:relative;
+  padding:15px 20px;
+  margin:10px 0;
+  cursor:pointer;
+  overflow:hidden;
+  border-radius:12px;
+
+  background:#fff;
+  transition:0.4s;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+/*fundo com imagem no hover */
+.product-list li::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-image:url(img/icons/imagen/logo.jpeg);
+  background-size:cover;
+  background-position:center;
   opacity:0;
-  transform:translateY(30px);
+  transform:scale(1.1);
+  transition:0.5s;
+  z-index:0;
+}
+/*overlay escuro elegante*/
+.product-list li::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+  opacity:0;
+  transition:0.5s;
+  z-index:1;
+}
+/*houver ativacao*/
+.product-list li:hover::before{
+  opacity:1;
+  transform:scale(1);
+}
+/*hover ativação*/
+.product-list li:hover::after{
+  opacity:1;
+}
+/*texto por cima*/
+.product-list span{
+  position:relative;
+  z-index:2;
+  font-size:18px;
+  font-weight:600;
+  color:#3e2723;
+  transition:0.4s;
 }
 
-.card.show{
-  opacity:1;
-  transform:translateY(0);
+/*mudança de cor no hover*/
+.product-list li:hover span{
+  color:#f5f5f5;
+  letter-spacing:1px;
+}
+
+
+/*animação de entrada (lista sobe suave)*/
+.product-list li{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.6s forwards;
+}
+
+.product-list li:nth-child(1){ animation-delay:0.1s; }
+.product-list li:nth-child(2){ animation-delay:0.2s; }
+.product-list li:nth-child(3){ animation-delay:0.3s; }
+.product-list li:nth-child(4){ animation-delay:0.4s; }
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 /* INSTAGRAM */

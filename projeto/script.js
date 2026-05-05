@@ -79,9 +79,15 @@ document.addEventListener('click', (e) => {
 function toggleMenu(){
   const menu = document.getElementById("menu");
   const toggle = document.querySelector(".menu-toggle");
+  const sound = document.getElementById("click-sound");
 
   menu.classList.toggle("active");
   toggle.classList.toggle("active");
+
+  // som leve de click
+  sound.currentTime = 0;
+  sound.volume = 0.2;
+  sound.play();
 }
 
 //iniciar
