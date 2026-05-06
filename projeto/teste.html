@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Palavras Cafeinadas</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <link rel="icon" href="img/icons/imagen/logo.jpeg">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -17,8 +19,6 @@
 
 </head>
  <!--Sounds-->
- inserir sons tema cafe
-
 <body>
 
   <!--Sounds-->
@@ -48,7 +48,7 @@
 
 <div class="nav-links" id="menu">
   <a href="#home">Início</a>
-  <a href="#menu-section">Cardápio</a>
+  <a href="#menu-section">Menu</a>
   <a href="#instagram">Instagram</a>
   <a href="#contact">Contato</a>
 </div>
@@ -67,10 +67,40 @@
   <div class="hero-content">
     <h1>Café perfeito todos os dias</h1>
     <p>No Palavras Cafeinadas, cada café é uma conversa e cada snack uma pausa inspiradora, entre o aroma do expresso e os sabores caseiros.</p>
-    <a href="#menu-section" class="btn">Ver Cardápio</a>
+    <a href="#menu-section" class="btn">Ver Menu</a>
   </div>
 
 </section>
+<!--about-->
+<section class="about-section" id="about">
+
+  <div class="about-image">
+    <img src="img/icons/imagen/logo.jpeg" alt="Palavras Cafeinadas">
+  </div>
+
+  <div class="about-content">
+    <h2>Sobre <span>Nós</span></h2>
+
+    <p>
+      No <strong>Palavras Cafeinadas</strong>, acreditamos que um bom café
+      é mais do que uma bebida — é um momento de pausa, inspiração e conexão.
+    </p>
+
+    <p>
+      Criámos um espaço acolhedor onde o aroma do café fresco se mistura
+      com conversas, criatividade e sabores caseiros preparados com carinho.
+    </p>
+
+    <p>
+      Seja para trabalhar, relaxar ou encontrar amigos,
+      queremos que cada visita seja especial.
+    </p>
+
+    <a href="#contact" class="btn">Falar Connosco</a>
+  </div>
+
+</section>
+
 <!--Feito-->
 
 <section class="menu-hover">
@@ -92,27 +122,79 @@
     <li style="--img:url('img/cake.jpg')">
       <span>Bolo</span>
     </li>
+      <li style="--img:url('img/espresso.jpg')">
+      <span>Espresso</span>
+    </li>
+
+    <li style="--img:url('img/cappuccino.jpg')">
+      <span>Cappuccino</span>
+    </li>
+
+    <li style="--img:url('img/latte.jpg')">
+      <span>Latte</span>
+    </li>
+
+    <li style="--img:url('img/cake.jpg')">
+      <span>Bolo</span>
+    </li>
+      <li style="--img:url('img/espresso.jpg')">
+      <span>Espresso</span>
+    </li>
+
+    <li style="--img:url('img/cappuccino.jpg')">
+      <span>Cappuccino</span>
+    </li>
+
+    <li style="--img:url('img/latte.jpg')">
+      <span>Latte</span>
+    </li>
+
+    <li style="--img:url('img/cake.jpg')">
+      <span>Bolo</span>
+    </li>
 
   </ul>
 
 </section>
 
 <section class="container" id="instagram">
-  <h2>Instagram</h2>
+ <a href="https://www.instagram.com/palavras.cafeinadas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+  <h2 id="titulo-insta">Instagram</h2>
+</a>
   <div class="instagram">
     <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
     <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb">
     <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+    <img src="img/icons/imagen/logo.jpeg" alt="">
   </div>
 </section>
 
 <section class="container" id="contact">
-  <h2>Contato</h2>
-  <p>📞 +351 962 967 652</p>
+  <h2 class="contact-title">Contato</h2>
+
+  <div class="contact-info">
+    <p>📞 <a href="tel:+351962967652">+351 962 967 652</a></p>
+  </div>
+
+  <div class="social-icons">
+    
+    <a href="https://www.instagram.com/palavras.cafeinadas" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=61586161720953" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://wa.me/351962967652" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+  </div>
 </section>
 
 <!--/*ADDRESS*/-->
- <section class=" container" id="address">
+ <section class="conteiner" id="address">
         <div class="conteiner">
             <h2 class="title">Encontre-nos <span>aqui</span></h2>
             <div class="map">
@@ -125,7 +207,7 @@
     </section>
 
 <footer>
-  <p>© 2026 <span class="fonte2">Palavras Cafeinadas</span></p>
+  <p>© 2026 <span class="fonte1">Palavras Cafeinadas</span></p>
 </footer>
 
 <!-- WHATSAPP -->
@@ -136,6 +218,19 @@
   </a>
 </div>
 
+
+<div id="product-modal" class="modal">
+  <div class="modal-content">
+
+    <span class="close">&times;</span>
+
+    <img id="modal-img" src="" alt="">
+    <h2 id="modal-title"></h2>
+    <p id="modal-desc"></p>
+    <span id="modal-price"></span>
+
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
