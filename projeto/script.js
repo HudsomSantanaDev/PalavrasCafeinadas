@@ -1,15 +1,9 @@
-
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("active");
-}
+//organizar...
 
 
-//sumindo com borda direita do tirulo centra do
-setTimeout(() => {
-  document.querySelector('.typing').classList.add('finished');
-}, 4000);
-
-/* LOADER */
+/* LOADER(carregamento da pagina ):
+-mostra logo
+-animacao de sumir */
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
 
@@ -19,51 +13,31 @@ window.addEventListener("load", () => {
 
     setTimeout(() => {
       loader.style.display = "none";
+      //dura 0.8s
     }, 800);
-
+//dura 1.5s
   }, 1500);
 });
 
-/* ANIMAÇÃO SCROLL */
-const cards = document.querySelectorAll('.card');
 
-window.addEventListener('scroll', () => {
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if(top < window.innerHeight - 50){
-      card.classList.add('show');
-    }
-  });
-});
 
-/* FECHAR MENU MOBILE */
+
+
+//menu topo a direita 
+// ao clicar o menu passa a classe ativo
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+    document.querySelector(".menu-toggle").classList.toggle("active");
+}
+/* FECHAR MENU clicando em qualque item
+- */
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
+    
     document.getElementById("menu").classList.remove("active");
+           document.querySelector(".menu-toggle").classList.remove("active");
   });
 });
-
-const slides = document.querySelectorAll('.slide');
-let current = 0;
-
-function changeSlide(){
-  slides[current].classList.remove('active');
-  
-  current = (current + 1) % slides.length;
-  
-  slides[current].classList.add('active');
-}
-
-setInterval(changeSlide, 4000); // muda a cada 4s
-
-//Fechar menu ao clicar num link (essencial)
-document.querySelectorAll('#menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById("menu").classList.remove("active");
-  });
-});
-
-
 //Fechar ao clicar fora do menu
 document.addEventListener('click', (e) => {
   const menu = document.getElementById("menu");
@@ -71,50 +45,62 @@ document.addEventListener('click', (e) => {
 
   if (!menu.contains(e.target) && !toggle.contains(e.target)) {
     menu.classList.remove("active");
+    toggle.classList.remove("active");
   }
 });
 
 
-//toogle menu
-function toggleMenu(){
-  const menu = document.getElementById("menu");
-  const toggle = document.querySelector(".menu-toggle");
-  const sound = document.getElementById("click-sound");
 
-  menu.classList.toggle("active");
-  toggle.classList.toggle("active");
+/*TITULO PRINCIPAL HEADER */
+//sumindo com borda direita do titulo centra do
+setTimeout(() => {
+  document.querySelector('.typing').classList.add('finished');
+  //demora 4s para sumir
+}, 4000);
 
-  // 🔊 som
-  if(sound){
-    sound.currentTime = 0;
-    sound.volume = 0.15;
-    sound.play();
-  }
 
-  // 📳 vibração (mobile)
-  if(navigator.vibrate){
-    navigator.vibrate(30); // vibração leve
-  }
+
+
+
+
+/*FUNDO da primeira section 
+-pagamos todas as imagens com a a class slide*/
+const slides = document.querySelectorAll('.slide');
+//a imagem que comeca é a que esta na posicao 1
+let current = 0;
+
+function changeSlide(){
+  //remove a foto current 
+  slides[current].classList.remove('active');
+   //define a proxima como current
+  current = (current + 1) % slides.length;
+  //adiciona a classe ativa ao current
+  
+  slides[current].classList.add('active');
 }
+//a imagem muda a cada 4s
+setInterval(changeSlide, 4000); // muda a cada 4s
 
-//iniciar
 
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
 
-  setTimeout(() => {
-    loader.classList.add("hide");
-  }, 2200);
-});
-/*MODAL JS */
+
+
+
+
+
+
+/*MODAL JS 
+-produto com preço e decricao*/
+//selecionando produtos no html em forma de array
 const products = document.querySelectorAll(".product-list li");
+//
 const modal = document.getElementById("product-modal");
 
 const img = document.getElementById("modal-img");
 const title = document.getElementById("modal-title");
 const desc = document.getElementById("modal-desc");
 const price = document.getElementById("modal-price");
-
+//array com itens
 const data = [
   {
     name: "Espresso",
@@ -190,19 +176,25 @@ const data = [
   }
 ];
 
-products.forEach((item, index) => {
-  item.addEventListener("click", () => {
 
+//percorre todos os produtos
+products.forEach((item, index) => {
+  //tem (item);index=posicao array
+  item.addEventListener("click", () => {
+//pomos a referencia da imagem do modal ativo sendo a iamgem do item  do array pela posicao
     img.src = data[index].img;
+    //pegando o nome pelo array(data)e posicao(index)
     title.textContent = data[index].name;
+    //pegando descricao
     desc.textContent = data[index].desc;
+    //pegando preo
     price.textContent = data[index].price;
 
     modal.classList.add("active");
   });
 });
 
-/* fechar */
+/* fechar modal ao clicar */
 document.querySelector(".close").onclick = () => {
   modal.classList.remove("active");
 };
@@ -214,18 +206,7 @@ modal.addEventListener("click", (e) => {
 }); 
 
 
-/* JavaScript (ativar ao scroll)*/
-const instaImgs = document.querySelectorAll(".instagram img");
-
-window.addEventListener("scroll", () => {
-  instaImgs.forEach(img => {
-    const top = img.getBoundingClientRect().top;
-
-    if(top < window.innerHeight - 50){
-      img.classList.add("show");
-    }
-  });
-});
+/*INSTA */
 
 /*linha divisora insta*/ 
 const instaSection = document.getElementById("instagram");
@@ -248,6 +229,23 @@ window.addEventListener("scroll", () => {
     titulo.classList.add("show");
   }
 });
+/* JavaScript (ativar ao scroll)
+-imgs aparecendo no scroll*/
+//imagens do insta
+const instaImgs = document.querySelectorAll(".instagram img");
+//ao fazer scroll, mostra as imagens
+window.addEventListener("scroll", () => {
+  instaImgs.forEach(img => {
+    //posicionando imagens do insta 
+    const top = img.getBoundingClientRect().top;
+//posiciona a iamagem abaixo do limite do ecra
+    if(top < window.innerHeight - 50){
+      img.classList.add("show");
+    }
+  });
+});
+
+
 
 
 /* scroll do adreesss
